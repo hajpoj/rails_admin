@@ -57,7 +57,7 @@ module RailsAdmin
           end
 
           def formatted_time_value
-            value.nil? ? "" : I18n.l(value, :format => localized_time_format)
+            value.to_s.empty? ? "" : I18n.l(value, :format => localized_time_format)
           end
 
           # Ruby to javascript formatting options translator
