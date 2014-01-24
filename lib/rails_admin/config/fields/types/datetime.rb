@@ -53,7 +53,7 @@ module RailsAdmin
 
           def formatted_date_value
             value = bindings[:object].new_record? && self.value.nil? && !self.default_value.nil? ? self.default_value : self.value
-            value.nil? ? "" : I18n.l(value, :format => localized_date_format).strip
+            value.to_s.empty? ? "" : I18n.l(value, :format => localized_date_format).strip
           end
 
           def formatted_time_value
